@@ -16,7 +16,30 @@ function getUserSelection() {
     return userSelection;
 }
 
-// Function to determine winner between user and computer: playRound
+// Function to determine winner between user and computer
+function playRound() {
+    let computerSelection = getComputerSelection();
+    let userSelection = getUserSelection();
+    let message = "";
 
+    if (computerSelection == userSelection) {
+        message =  `It's a tie. You both picked ${userSelection}.`;
+    }
+
+    else if ((computerSelection == "rock" && userSelection == "scissors") ||(computerSelection == "paper" && userSelection == "rock") || (computerSelection == "scissors" && userSelection == "paper") ) {
+        message = `You lose! ${computerSelection} beats ${userSelection}.`;  
+    }
+
+    else {
+        message = `You win! ${userSelection} beats ${computerSelection}.`;
+    }
+
+    return message;
+}
 
 // Function to iterate playRound for 5 rounds: game ()
+function game() {
+    for (i = 0; i < 5; i++) {
+        console.log(playRound())
+    }
+}
