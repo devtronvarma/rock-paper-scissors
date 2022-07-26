@@ -9,10 +9,12 @@ function getComputerSelection() {
     // Return computerSelection
     return computerSelection;
 }
-console.log(getComputerSelection());
 
-// Function to get input from user: userSelection
-
+// Function to get input from user
+function getUserSelection() {
+    let userSelection = prompt("Rock, paper, or scissors?").toLowerCase();
+    return userSelection;
+}
 
 // Function to determine winner between user and computer: playRound
 
