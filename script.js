@@ -1,3 +1,9 @@
+// Function to uppercase first letter of a word
+function firstLetterUpper(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
+
 // Function for computer to generate a random choice between rock, paper, or scissors
 function getComputerSelection() {
     // Give computer choices: rock, paper, scissors
@@ -31,12 +37,12 @@ function playRound() {
 
     // Check for computer winning
     else if ((computerSelection == "rock" && userSelection == "scissors") ||(computerSelection == "paper" && userSelection == "rock") || (computerSelection == "scissors" && userSelection == "paper") ) {
-        message = `You lose! ${computerSelection} beats ${userSelection}.`;  
+        message = `You lose! ${firstLetterUpper(computerSelection)} beats ${userSelection}.`;  
     }
 
     // Otherwise, user wins
     else {
-        message = `You win! ${userSelection} beats ${computerSelection}.`;
+        message = `You win! ${firstLetterUpper(userSelection)} beats ${computerSelection}.`;
     }
 
     // Return message (which side won)
